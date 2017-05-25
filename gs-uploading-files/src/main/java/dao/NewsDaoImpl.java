@@ -1,4 +1,5 @@
 package dao;
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -7,7 +8,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import model.NewsConten;
-import model.UserDocument;;
 
 @Repository("newsDao")
 public class NewsDaoImpl extends AbstractDao<Integer, NewsConten> implements NewsDao {

@@ -28,10 +28,6 @@ import model.FileBucket;
 import model.UserDocument;
 import util.FileValidator;
 import model.NewsConten;
-
-import hello.StorageFileNotFoundException;
-import hello.StorageService;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
@@ -42,9 +38,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("/")
 public class FileUploadController {
 
-   private final StorageService storageService;
 	@Autowired
 	NewsService newsService;
 	
@@ -56,11 +52,6 @@ public class FileUploadController {
 
 	@Autowired
 	FileValidator fileValidator;
-	
-    @Autowired
-    public FileUploadController( StorageService storageService) {
-        this.storageService = storageService;
-    }
     @InitBinder("fileBucket")
 	protected void initBinder(WebDataBinder binder) {
 	   binder.setValidator(fileValidator);
@@ -108,36 +99,6 @@ public class FileUploadController {
     
   
     
-     @GetMapping("/files/{filename:.+}")
-    @ResponseBody
-    public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-
-        Resource file = storageService.loadAsResource(filename);
-        return ResponseEntity
-                .ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+file.getFilename()+"\"")
-                .body(file);
-    }
-    @GetMapping("/search")
-    public String handleFileSearch(@RequestParam("query") String query, Model model){
-    	model.addAttribute("driveAPISearchData", storageService.driveAPISearch(query));    	
-    	return "test";
-    }
-    @PostMapping("/")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file,
-                                   RedirectAttributes redirectAttributes) {
-
-        storageService.store(file);
-        redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
-
-        return "redirect:/";
-    }
-
-    @ExceptionHandler(StorageFileNotFoundException.class)
-    public ResponseEntity handleStorageFileNotFound(StorageFileNotFoundException exc) {
-        return ResponseEntity.notFound().build();
-    }
     @RequestMapping(value = {"/managenews" }, method = RequestMethod.GET)
  	public String listNews(ModelMap model) {
 		List<NewsConten> news = newsService.findAllNews();
