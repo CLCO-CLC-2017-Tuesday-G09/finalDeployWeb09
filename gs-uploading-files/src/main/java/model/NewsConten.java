@@ -18,7 +18,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="News")
+@Table(name="news")
 public class NewsConten {
  
 
