@@ -4,64 +4,64 @@
 
 	<groupId>org.springframework</groupId>
 	<artifactId>gs-uploading-files</artifactId>
-	 <version>0.1.0</version>
+	<version>0.1.0</version>
 
- <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.3.RELEASE</version>
-    </parent>
-    
-    <properties>
-        <java.version>1.8</java.version>
-        <springframework.version>4.3.7.RELEASE</springframework.version>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<springframework.version>4.3.7.RELEASE</springframework.version>
 		<hibernate.version>4.3.10.Final</hibernate.version>
 		<mysql.connector.version>6.0.5</mysql.connector.version>
-    </properties>
+	</properties>
 
-    <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.datanucleus/datanucleus-rdbms -->
-	<dependency>
-	    <groupId>org.datanucleus</groupId>
-	    <artifactId>datanucleus-rdbms</artifactId>
-	    <version>1.1.5</version>
-	</dependency>
-	    
-    <!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk -->
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.datanucleus/datanucleus-rdbms -->
 		<dependency>
-		    <groupId>com.google.appengine</groupId>
-		    <artifactId>appengine-api-1.0-sdk</artifactId>
-		    <version>1.6.6</version>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-rdbms</artifactId>
+			<version>1.1.5</version>
 		</dependency>
-		    
+
+		<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk -->
 		<dependency>
-		  <groupId>com.google.cloud.sql</groupId>
-		  <artifactId>mysql-socket-factory-connector-j-6</artifactId>
-		  <version>1.0.2</version>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>1.6.6</version>
 		</dependency>
-	    
-    
-    	<!-- https://mvnrepository.com/artifact/net.htmlparser.jericho/jericho-html -->
-	<dependency>
-	    <groupId>net.htmlparser.jericho</groupId>
-	    <artifactId>jericho-html</artifactId>
-	    <version>3.3</version>
-	</dependency>
-  
-  <!-- https://mvnrepository.com/artifact/org.htmlparser/htmlparser -->
+
 		<dependency>
-		    <groupId>org.htmlparser</groupId>
-		    <artifactId>htmlparser</artifactId>
-		    <version>2.1</version>
+			<groupId>com.google.cloud.sql</groupId>
+			<artifactId>mysql-socket-factory-connector-j-6</artifactId>
+			<version>1.0.2</version>
 		</dependency>
-  
-	<!--HTML editor-->
+
+
+		<!-- https://mvnrepository.com/artifact/net.htmlparser.jericho/jericho-html -->
 		<dependency>
-		    <groupId>com.ckeditor</groupId>
-		    <artifactId>ckeditor-java-core</artifactId>
-		    <version>3.5.3</version>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+			<version>3.3</version>
 		</dependency>
-  <!-- Spring -->
+
+		<!-- https://mvnrepository.com/artifact/org.htmlparser/htmlparser -->
+		<dependency>
+			<groupId>org.htmlparser</groupId>
+			<artifactId>htmlparser</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<!--HTML editor -->
+		<dependency>
+			<groupId>com.ckeditor</groupId>
+			<artifactId>ckeditor-java-core</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -109,8 +109,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
 		</dependency>
-    
-    	<!-- Servlet+JSP+JSTL -->
+
+		<!-- Servlet+JSP+JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -122,88 +122,88 @@
 			<version>2.3.1</version>
 		</dependency>
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
-		
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- tag::actuator[] -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!-- end::actuator[] -->
-        <!-- tag::tests[] -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!-- end::tests[] -->
-    </dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-    
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-    <build>
-        <plugins>
-            <plugin>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-maven-plugin</artifactId>
-			    <version>1.4.2.RELEASE</version>
-			    <executions>
-			     <execution>
-			      <goals>
-			       <goal>repackage</goal>
-			      </goals>
-			     </execution>
-			    </executions>
-			   </plugin>
-            <plugin>
-		        <groupId>com.google.cloud.tools</groupId>
-		        <artifactId>appengine-maven-plugin</artifactId>
-		        <version>1.2.1</version>
-		     </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-        <pluginManagement>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- tag::actuator[] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- end::actuator[] -->
+		<!-- tag::tests[] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- end::tests[] -->
+	</dependencies>
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.4.2.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>1.2.1</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -212,12 +212,12 @@
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
 						<warName>group09</warName>
-						
+
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 		<finalName>group09</finalName>
-    </build>
+	</build>
 
 </project>

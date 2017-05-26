@@ -118,11 +118,6 @@ public class FileUploadController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+file.getFilename()+"\"")
                 .body(file);
     }
-    @GetMapping("/search")
-    public String handleFileSearch(@RequestParam("query") String query, Model model){
-    	model.addAttribute("driveAPISearchData", storageService.driveAPISearch(query));    	
-    	return "test";
-    }
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {

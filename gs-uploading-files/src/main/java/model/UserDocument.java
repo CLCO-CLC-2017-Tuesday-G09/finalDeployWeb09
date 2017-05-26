@@ -12,7 +12,6 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
 @Table(name="NEWS_DOCUMENT")
 public class UserDocument {
  
